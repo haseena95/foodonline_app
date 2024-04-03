@@ -277,6 +277,15 @@ header section {
   grid-gap: 2vw;
   align-items: center;
 }
+.cards img{
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+}
+.cards .p{
+  text-wrap:wrap;
+  
+}
 footer section{
   padding :10px 13%;
   display:inline-flex;

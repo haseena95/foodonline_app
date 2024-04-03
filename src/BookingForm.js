@@ -1,9 +1,9 @@
 import React from "react";
 import { useRef, useState } from "react";
 
-const ReservationForm = (props) => {
+const BookingForm = (props) => {
     const [date, setDate] = useState("")
-    //const [times, setTimes] = useState("")
+    const [time, setTime] = useState("")
     const [
         selectedValue,
         setSelectedValue,
@@ -39,7 +39,12 @@ const ReservationForm = (props) => {
     const handleDateChange = (e) => {
 
         setDate(e);
-        //props.dispatch(e);
+        props.dispatch(e);
+
+    }
+    const handleTimeChange = (e) => {
+
+        setTime(e);
 
     }
     const handleSubmit = (e) => {
@@ -80,9 +85,18 @@ const ReservationForm = (props) => {
                         {/* for time selection*/}
                         <div>
                             <label htmlFor="Select Time">Select Time:</label>
-                            <Radiobox label="Lunch" value="Lunch" checked={selectedValue === "Lunch"}
+                            {/* <select id="reservation_time" value={time} onChange={(e) => handleTimeChange(e.target.value)} required>*/}
+                            <select id="reservation_time" key={time} value={time} onChange={(e) => handleTimeChange(e.target.value)}>
+                                {props.availableTimes.map(time => {
+                                    return <option >{time}</option>
+
+                                })}
+
+
+                            </select>
+                            {/*  <Radiobox label="Lunch" value="Lunch" checked={selectedValue === "Lunch"}
                                 onChange={(e) => handleRadioChange(e.target.value)} />
-                            <Radiobox label="Dinner" value="Dinner" checked={selectedValue === "Dinner"} onChange={(e) => handleRadioChange(e.target.value)} />
+    <Radiobox label="Dinner" value="Dinner" checked={selectedValue === "Dinner"} onChange={(e) => handleRadioChange(e.target.value)} /> */}
 
                         </div>
                         {/**  Number of guests*/}
@@ -151,4 +165,4 @@ const ReservationForm = (props) => {
 
 }
 
-export default ReservationForm;
+export default BookingForm;

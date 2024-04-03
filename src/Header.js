@@ -12,7 +12,7 @@ const Header = () => {
                     <h3>Pune</h3>
                     <p> Serves Authenthic Indian Dishes.  Everyday lunch  and dinner meals.
                         Snacks available all throughout day. </p>
-                    <Link to="/reservation"><button aria-label="On Click">Reserve a Table</button></Link>
+                    <Link to="/reservation"><button data-testid="reserve_a_table" aria-label="On Click">Reserve a Table</button></Link>
                 </div>
                 <div>
                     <div className='banner-img'>
